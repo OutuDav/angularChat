@@ -1,0 +1,53 @@
+<p-card>
+  <!-- Header -->
+  <ng-template pTemplate="header">
+    <div>
+      <p-chip [label]="user.name" icon="pi pi-user" class="m-1" />
+      <p-chip [label]="user.room" icon="pi pi-globe" class="m-1" />
+    </div>
+    <p-button
+      label="Salir"
+      icon="pi pi-sign-out"
+      iconPos="right"
+      size="small"
+      class="m-1"
+      [outlined]="true"
+      (click)="exitRoom()"
+    />
+  </ng-template>
+
+  <!-- Body  -->
+  @for (log of (logs$ | async); track log) {
+  <!-- Notifications -->
+  @if (logValidator.isNotification(log)) {
+  <p class="notificationMessage">{{ log.content }}</p>
+  } @else {
+  <!-- User messages -->
+  @if (logValidator.isUser(log)) {
+  <p class="userMessage">{{ log.content }}</p>
+  <!-- External messages -->
+  } @else {
+  <p class="externalMessage">
+    <span class="external-username">{{ log.user?.name }}: </span
+    >{{ log.content }}
+  </p>
+  } } }
+
+  <!-- Footer  -->
+  <ng-template pTemplate="footer">
+    <textarea
+      #textArea
+      rows="1"
+      cols="30"
+      pInputTextarea
+      [autoResize]="true"
+      class="no-right-radius full-width"
+      (keydown.enter)="sendMessage(textArea, $event)"
+    ></textarea>
+    <p-button
+      icon="pi pi-send"
+      class="no-left-radius"
+      (click)="sendMessage(textArea, $event)"
+    />
+  </ng-template>
+</p-card>

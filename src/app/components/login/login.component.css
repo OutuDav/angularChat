@@ -1,0 +1,25 @@
+p-card ::ng-deep .p-card {
+  background: rgba(255, 255, 255, 0.8);
+  min-width: 400px;
+}
+
+::ng-deep .p-card-body {
+  text-align: center;
+}
+
+p-card ::ng-deep .p-card-content {
+  padding: 0px;
+  margin: 0px;
+}
+
+input {
+  border-color: rgb(255, 255, 255);
+}
+
+::ng-deep .p-button {
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}

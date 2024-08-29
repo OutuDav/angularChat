@@ -1,0 +1,53 @@
+p-card ::ng-deep .p-card {
+  background: rgba(255, 255, 255, 0.9);
+  min-width: 500px;
+}
+
+::ng-deep .p-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+::ng-deep .p-card-body {
+  padding: 0.5em;
+  align-items: stretch;
+}
+
+::ng-deep .p-card-footer {
+  display: flex;
+  align-items: stretch;
+}
+
+::ng-deep .p-card-footer ::ng-deep .p-button {
+  height: 100%;
+
+  border-radius: 0px 6px 6px 0px !important;
+}
+
+.no-right-radius {
+  border-radius: 6px 0px 0px 6px !important;
+}
+
+.userMessage {
+  text-align: end;
+}
+
+.externalMessage {
+  text-align: start;
+}
+
+.notificationMessage {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.external-username {
+  font-weight: bold;
+  color: black;
+}
+
+.full-width {
+  width: 100%;
+}

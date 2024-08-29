@@ -1,0 +1,32 @@
+<p-card header="Portal de Acceso" (keydown.enter)="joinRoom()">
+  <!-- User name input-->
+  <p-inputGroup class="my-3">
+    <p-inputGroupAddon>
+      <i class="pi pi-user"></i>
+    </p-inputGroupAddon>
+    <input
+      class="p-2 full-width"
+      pInputText
+      placeholder="Nombre de usuario"
+      [(ngModel)]="userName"
+    />
+  </p-inputGroup>
+
+  <!-- Room name input -->
+  <div class="full-width">
+    <p-inputGroup class="my-3">
+      <p-inputGroupAddon>
+        <i class="pi pi-globe"></i>
+      </p-inputGroupAddon>
+      <input
+        class="p-2 full-width"
+        pInputText
+        placeholder="Nombre de la sala"
+        [(ngModel)]="roomName"
+      />
+    </p-inputGroup>
+  </div>
+
+  <!-- Join button -->
+  <p-button label="Unirse a la sala" (click)="joinRoom()" />
+</p-card>
